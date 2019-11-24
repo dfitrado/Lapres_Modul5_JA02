@@ -5,7 +5,8 @@ A. Satoshi memberikan rancangan topologi jaringan usahanya sebagai berikut:
 <img src="pictures/Jaringan Satoshi.png" width="800">
 
 B. Dalam soal ini, kami menggunakan teknik VLSM untuk membuat topologi:
-
+<img src="pictures/pengelompokkan vlsm.jpg" width="800">
+<img src="pictures/perhitungan vlsm.jpg" width="800">
 
 Berikut ini adalah file topologi.sh yang dibuat supaya UML dapat berjalan:
 ```
