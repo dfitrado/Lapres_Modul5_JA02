@@ -1,6 +1,10 @@
 # Lapres_Modul5_JA02
 Laporan Praktikum Soal Shift Jarkom oleh Kelompok A02.
 
+### Oleh:
+- Donny Fitrado (05111740000171)
+- Faqih Fathan Irfani (05111740000175)
+
 A. Satoshi memberikan rancangan topologi jaringan usahanya sebagai berikut:
 <img src="pictures/Jaringan Satoshi.png" width="800">
 
