@@ -41,11 +41,11 @@ xterm -T PSYDUCK -e linux ubd0=PSYDUCK,jarkom umid=PSYDUCK eth0=daemon,,,switch3
 ```
 <img src="pictures/topologi.png" width="1000">
 
-C. bash ``topologi.sh`` pada PuTTY
-D. Login ke semua uml yang ada, lalu
-E. Buka ``sysctl.conf`` pada setiap router dengan mengetik ``nano /etc/sysctl.conf``, lalu hilangkan tanda pagar (#) bagian net.ipv4.ip_forward=1 .
-F. kemudian, jalankan perintah ``sysctl -p`` pada setiap router.
-G. Setting IP dari setiap UML dengan dengan perintah ``nano /etc/network/interfaces``.
+C. bash ``topologi.sh`` pada PuTTY <br />
+D. Login ke semua uml yang ada, lalu <br />
+E. Buka ``sysctl.conf`` pada setiap router dengan mengetik ``nano /etc/sysctl.conf``, lalu hilangkan tanda pagar (#) bagian net.ipv4.ip_forward=1 . <br />
+F. kemudian, jalankan perintah ``sysctl -p`` pada setiap router. <br />
+G. Setting IP dari setiap UML dengan dengan perintah ``nano /etc/network/interfaces``. <br />
 #### Pikachu
 ```auto eth0
 iface eth0 inet static
