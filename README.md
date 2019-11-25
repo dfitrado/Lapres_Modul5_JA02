@@ -211,27 +211,27 @@ Membuat script ``no1.sh`` pada UML PIKACHU, yang berisikan sebagai berikut:
 ``iptables -t nat -A POSTROUTING -s 192.168.0.0/16 -o eth0 -j SNAT --to-source 10.151.72.14``
 
 2. Oleh karena itu maka kalian diminta untuk mendrop semua akses SSH dari luar Topologi (UML) Kalian pada server yang memiliki ip DMZ (DHCP dan DNS SERVER) pada PIKACHU demi menjaga keamanan.
-### Jawab:
+#### Jawab:
 Membuat script ``no2.sh`` pada UML PIKACHU, yang berisikan sebagai berikut:
 ``iptables -A FORWARD -p tcp --dport 22 -d 10.151.73.24/29 -i eth0 -j DROP``
 
 3. Karena tim kalian maksimal terdiri dari 2 atau 3 orang saja, Satoshi meminta kalian untuk hanya membatasi DHCP dan DNS server hanya boleh menerima maksimal 2 atau 3(jumlah kelompok) koneksi ICMP secara bersamaan yang berasal dari mana saja menggunakan iptables pada masing masing server, selebihnya akan di DROP.
-### Jawab:
+#### Jawab:
 Membuat script ``no3.sh`` pada UML ARTICUNO dan MEW, seperti di bawah ini:
 ``iptables -A INPUT -p icmp -m connlimit --connlimit-above 3 --connlimit-mask 0 -j DROP``
 
 4. iptables -A INPUT -p icmp -m connlimit --connlimit-above 3 --connlimit-mask 0 -j DROP
-### Jawab:
+#### Jawab:
 Membuat script ``no4.sh`` pada UML PIKACHU, dengan isi seperti ini:
 ``iptables -t nat -A PREROUTING -d 10.151.73.27 -s 10.151.36.0/24 -p tcp --dport 1234 -j DNAT --to-destination 192.168.0.19:1234 ``
 
 5. Sedangkan ketika diakses dari subnet INFORMATIKA akan diarahkan pada MOLTRES dengan port 1234.
-### Jawab:
+#### Jawab:
 Membuat script ``no5.sh`` pada UML PIKACHU, dengan isi seperti ini:
 ``iptables -t nat -A PREROUTING -d 10.151.73.27 -s 10.151.252.0/22 -p tcp --dport 1234 -j DNAT --to-destination 192.168.0.18:1234``
 
 6. Akses dari subnet AJK hanya diperbolehkan pada pukul 08.00 - 17.00 pada hari Senin sampai Jumat
-### Jawab:
+#### Jawab:
 Membuat file script ``no6.sh`` pada UML MEW:
 ```
 iptables -A INPUT -s 10.151.36.0/24 -m time --timestart 08:00 --timestop 17:00 --weekdays Mon,Tue,Wed,Thu,Fri -j ACCEPT
@@ -239,18 +239,18 @@ iptables -A INPUT -s 10.151.36.0/24 -m time --timestart 17:01 --timestop 07:59 -
 ```
 
 7. Akses dari subnet INFORMATIKA hanya diperbolehkan pada pukul 17.00 hingga pukul 09.00 setiap harinya. Selain itu paket akan di REJECT
-### Jawab:
+#### Jawab:
 Membuat file script ``no6.sh`` pada UML MEW:
 ```
 iptables -A INPUT -s 10.151.252.0/22 -m time --timestart 09:01 --timestop 16:59 -j REJECT
 ```
 
 9. Karena kita memiliki 2 buah WEB Server, Satoshi ingin PIKACHU disetting sehingga setiap request dari client yang mengakses DNS Server akan didistribusikan secara bergantian pada MEWTWO port 80 dan MOLTRES port 80.
-### Jawab:
+#### Jawab:
 Belum kami kerjakan.
 
 10. Karena banyak paket yang di drop oleh tim kalian, Satoshi ingin agar semua paket didrop oleh firewall (dalam topologi) tercatat dalam log pada setiap UML yang memiliki aturan drop.
-### Jawab:
+#### Jawab:
 Belum kami kerjakan.
 
 
