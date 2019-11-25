@@ -240,7 +240,7 @@ iptables -A INPUT -s 10.151.36.0/24 -m time --timestart 17:01 --timestop 07:59 -
 
 7. Akses dari subnet INFORMATIKA hanya diperbolehkan pada pukul 17.00 hingga pukul 09.00 setiap harinya. Selain itu paket akan di REJECT
 #### Jawab:
-Membuat file script ``no6.sh`` pada UML MEW:
+Membuat file script ``no7.sh`` pada UML MEW:
 ```
 iptables -A INPUT -s 10.151.252.0/22 -m time --timestart 09:01 --timestop 16:59 -j REJECT
 ```
